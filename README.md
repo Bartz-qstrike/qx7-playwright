@@ -7,6 +7,8 @@ End-to-end Playwright tests for the QX7 admin, kept outside the QX7 repo. They r
 
 ## Setup
 
+New machine? Follow [INSTALL.md](INSTALL.md) for the full step-by-step setup.
+
 ```bash
 npm install
 npx playwright install chromium
@@ -37,7 +39,7 @@ Run the programmatic updates headless: `npm run test:programmatic`. `brand-block
 for every Brand Block link in the CSV named by `QX7_SRE_3215_CSV`: opens the Fabric Color modal, saves it, saves the Brand
 Block, and moves to the next link. Blocks whose modal has no fabric colors are not saved. Each block's result is written to
 `programmatic-results/sre-3215-resave-<timestamp>.csv` as it goes. `QX7_BLOCK_LIMIT=5` does only 5 rows;
-`QX7_BLOCK_FROM_ID=<id>` starts at that block (to resume a stopped run). This writes to the local QX7 database.
+`QX7_BLOCK_FROM_ID=<id>` starts at that block and `QX7_BLOCK_TO_ID=<id>` stops after it (to resume or redo a range). This writes to the local QX7 database.
 
 Run one area only by passing its folder:
 
